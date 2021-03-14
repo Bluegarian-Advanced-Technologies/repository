@@ -1,0 +1,176 @@
+@font-face {
+    font-family: AstroSpace;
+    src: url(Assets/Custom_Fonts/AstroSpace-eZ2Bg.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.secondfa {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.726);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secondfa img {
+    position: fixed;
+    width: 50vw;
+    height: auto;
+    transition-duration: 4s;
+    transition-timing-function: linear;
+}
+
+/* Parallax landing page and login */
+
+.parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+.section { 
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.51);
+    background-size: 100%;
+    z-index: -1;
+}
+.static {
+    background: rgb(0, 73, 207);
+}
+.landing h1{
+    font-size: 64px;
+    transform: translateZ(-0.5px);
+    font-weight: normal;
+    text-align: center;
+    max-width: 70%;
+    line-height: 125%;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #000;
+    color: white;
+    font-family: AstroSpace;
+}
+.landing::after {
+    background-image: url(Assets/Images/futuristicBlueBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer {
+    height: 40vh;
+    background: rgb(0, 56, 160);
+}
+.footer::after {
+    background-image: url(Assets/Images/blueAbstractWaves1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.foot-end {
+    height: 30vh;
+}
+
+/* Login Box */
+
+.login {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.login-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    background: rgb(27, 107, 255);
+    padding: 64px;
+    border-radius: 5px;
+}
+.login h2 {
+    font-size: 32px;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 32px;
+}
+.login p {
+    color: rgb(211, 0, 0);
+    font-weight: bold;
+    margin-bottom: 12px;
+    transition-duration: 300ms;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.login input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #A5C1D5;
+    outline: none;
+    color: #88A4B4;
+    text-align: center;
+    font-size: 24px;
+    transition-duration: 250ms;
+    margin: 16px;
+    width: 100%;
+}
+.login input::placeholder {
+    color: #88A4B4;
+}
+.login input:focus {
+    border-bottom: 2px solid #1F92EE;
+    color: white;
+}
+.login button {
+    padding: 16px 32px;
+    font-size: 32px;
+    color: white;
+    background: #1F92EE;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 20px;
+}
+.login button:hover {
+    background: #45abff;
+    cursor: pointer;
+}
+
+/* Main Content */
+
+main {
+    height: 5000px;
+    background: rgb(27, 107, 255);
+}
+
+.secret {
+    height: 5000px;
+    background: rgb(21, 78, 185);
+}
