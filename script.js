@@ -3,7 +3,7 @@
 const Emperor_of_Bluegaria = {username: "Almighty Emperor of Bluegaria", password: "glorytothebluegarianempire", admin: "yes"};
 const Kaiser_of_Redistan = {username: "Kaiser of Redistan", password: "0000", admin: "yes"};
 const Czar_of_Yellowgard = {username: "Czar of Yellowgard", password: "respecttothebluegarianempire", admin: "yes"};
-const Administrator = {username: "Governement Offical of Bluegaria", password: "highlysecurepassword", admin: "yes"}
+const Administrator = {username: "Governement Official of Bluegaria", password: "highlysecurepassword", admin: "yes"}
 const Guest = {username: "Citizen of Bluegaria", password: "Bluegaria", admin: "no"};
 
 var currentUser;
@@ -127,6 +127,8 @@ function checkPassword()
                 {
                     document.querySelector('.secret').style.display = 'block';
                 }
+
+                document.getElementById('welcomer').innerHTML = currentUser.username;
             })
         }, 1);
 

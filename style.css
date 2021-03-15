@@ -24,6 +24,15 @@
     background: rgb(193, 218, 255);
 }
 
+::selection {
+    color: rgb(255, 187, 0);
+    background: rgba(255, 255, 255, 0.363);
+}
+::-moz-selection {
+    color: rgb(255, 187, 0);
+    background: rgba(255, 255, 255, 0.363);
+}
+
 html {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     background: rgb(0, 73, 207);
@@ -191,12 +200,17 @@ main {
     height: 2000px;
     background: rgb(27, 107, 255);
     position: relative;
+    padding: 24px;
+}
+main h1 {
+    text-align: center;
+    color: white;
 }
 
 .secret {
     height: 1000px;
     background: rgb(21, 78, 185);
     position: absolute;
-    width: 100%;
+    width: 90%;
     bottom: 0;
 }
