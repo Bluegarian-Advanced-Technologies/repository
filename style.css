@@ -10,8 +10,23 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(193, 218, 255);
+}
+
 html {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background: rgb(0, 73, 207);
 }
 
 .secondfa {
@@ -26,12 +41,19 @@ html {
     align-items: center;
     justify-content: center;
 }
+.secondfa h1 {
+    font-size: 32px;
+    text-align: center;
+    z-index: 9999;
+    color: white;
+}
 .secondfa img {
     position: fixed;
     width: 50vw;
     height: auto;
     transition-duration: 4s;
     transition-timing-function: linear;
+    cursor: pointer;
 }
 
 /* Parallax landing page and login */
@@ -76,7 +98,7 @@ html {
     font-family: AstroSpace;
 }
 .landing::after {
-    background-image: url(Assets/Images/futuristicBlueBackground.jpg);
+    background-image: url('Assets/Images/futuristicBlueBackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,16 +106,12 @@ html {
 .footer {
     height: 40vh;
     background: rgb(0, 56, 160);
-}
-.footer::after {
-    background-image: url(Assets/Images/blueAbstractWaves1.jpg);
+    background-image: url('Assets/Images/blueAbstractWaves1.jpg');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center -615px;
 }
-.foot-end {
-    height: 30vh;
-}
+
 
 /* Login Box */
 
@@ -103,6 +121,9 @@ html {
     align-items: center;
     justify-content: center;
     color: white;
+    border-style: solid;
+    border-color: rgb(0, 56, 160);
+    border-width: 32px 0px 32px 0px;
 }
 .login-box {
     display: flex;
@@ -113,6 +134,7 @@ html {
     background: rgb(27, 107, 255);
     padding: 64px;
     border-radius: 5px;
+    transition-duration: 250ms;
 }
 .login h2 {
     font-size: 32px;
@@ -166,11 +188,15 @@ html {
 /* Main Content */
 
 main {
-    height: 5000px;
+    height: 2000px;
     background: rgb(27, 107, 255);
+    position: relative;
 }
 
 .secret {
-    height: 5000px;
+    height: 1000px;
     background: rgb(21, 78, 185);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }

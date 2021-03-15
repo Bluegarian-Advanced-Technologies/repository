@@ -18,6 +18,13 @@ function login()
 
     switch (username)
     {
+        case '':
+            document.getElementById('invalidMsg').innerHTML = 'no username entered!';
+            setTimeout(() => {
+                document.getElementById('invalidMsg').innerHTML = '';
+            }, 3500);
+            break
+
         case 'Guest':
             currentUser = Guest;
             checkPassword();
@@ -92,19 +99,49 @@ function checkPassword()
         }, 200);
 
         setTimeout(() => {
-            document.querySelector('.secondfa').style.display = 'none';
-            document.getElementById('kill_agent').style = 'transform: scale(1);';
-
-            document.getElementById('secondfaSounds').pause();
-
-            document.querySelector('main').style.display = 'block';
-            document.querySelector('.parallax-wrapper').style.display = 'none';
-
-            if (currentUser.admin === "yes")
+            document.getElementById('kill_agent').addEventListener('click',function()
             {
-                document.querySelector('.secret').style.display = 'block';
-            }
-        }, 4200);
+                document.querySelector('.secondfa').style.display = 'none';
+                document.getElementById('kill_agent').style = 'transform: scale(1);';
+    
+                document.getElementById('secondfaSounds').pause();
+    
+                document.querySelector('main').style.display = 'block';
+                document.querySelector('.parallax-wrapper').style.display = 'none';
+
+                clearTimeout(eee);
+    
+                window.onbeforeunload = function (e) {
+                    e = e || window.event;
+                
+                    // For IE and Firefox prior to version 4
+                    if (e) {
+                        e.returnValue = 'You will be logged out when you exit.';
+                    }
+                
+                    // For Safari
+                    return 'You will be logged out when you exit.';
+                };
+    
+                if (currentUser.admin === "yes")
+                {
+                    document.querySelector('.secret').style.display = 'block';
+                }
+            })
+        }, 1);
+
+        setTimeout(() => {
+            document.getElementById('secondfaInfo').innerHTML = 'Press on the image';
+        }, 2000);
+
+        let eee = setTimeout(() => {
+            document.write('<h1 style="color:red;text-align:center;">Connection terminated! User unresponsive timeout triggered!</h1>')
+        }, 10000);
+    }else if (userPass == ''){
+        document.getElementById('invalidMsg').innerHTML = 'no password entered!';
+        setTimeout(() => {
+            document.getElementById('invalidMsg').innerHTML = '';
+        }, 3500);
     }else {
         invalidPassword();
     };
