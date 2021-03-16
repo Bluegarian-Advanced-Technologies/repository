@@ -1,16 +1,26 @@
 'use strict';
 
+// User objects and properties storage
 const Emperor_of_Bluegaria = {username: "Almighty Emperor of Bluegaria", password: "glorytothebluegarianempire", admin: "yes"};
 const Kaiser_of_Redistan = {username: "Kaiser of Redistan", password: "0000", admin: "yes"};
 const Czar_of_Yellowgard = {username: "Czar of Yellowgard", password: "respecttothebluegarianempire", admin: "yes"};
 const Administrator = {username: "Governement Official of Bluegaria", password: "highlysecurepassword", admin: "yes"}
+
 const Guest = {username: "Citizen of Bluegaria", password: "Bluegaria", admin: "no"};
 
-var currentUser;
+// Unofficial objects of the chronicle of Bluegaria
+const Macy = {username: "Bingus", password: "Amongus", admin: "yes"};
+const Stephen =  {username: "Stimmons", password: "die", admin: "yes"};
 
+let Temp = {username: "Website in development object", password: "0", admin: "yes"};
+
+// Global variable declaration
+
+var currentUser;
 var username;
 var userPass;
 
+// Login switch function
 function login() 
 {
     username = document.getElementById('username').value;
@@ -23,7 +33,7 @@ function login()
             setTimeout(() => {
                 document.getElementById('invalidMsg').innerHTML = '';
             }, 3500);
-            break
+            break;
 
         case 'Guest':
             currentUser = Guest;
@@ -50,11 +60,27 @@ function login()
             checkPassword();
             break;
 
+        case 'Macy':
+            currentUser = Macy;
+            checkPassword();
+            break;
+
+        case 'Stephen':
+            currentUser = Stephen;
+            checkPassword();
+            break;
+
+        case 'Temp':
+            currentUser = Temp;
+            checkPassword();
+            break;
+
         default:
             invalidUsername();
     };
 };
 
+// Do various instances of these functions depending on if username or password is invalid
 let invalidFieldTimeout = 0;
 function invalidUsername()
 {
@@ -85,6 +111,7 @@ function invalidPassword()
     }, 3500);
 };
 
+// Checking password, displaying memetic kill agent, and showing main repository
 function checkPassword() 
 {
     if (userPass === currentUser.password)
@@ -99,7 +126,7 @@ function checkPassword()
         }, 200);
 
         setTimeout(() => {
-            document.getElementById('kill_agent').addEventListener('click',function()
+            document.getElementById('kill_agent').addEventListener('click', function()
             {
                 document.querySelector('.secondfa').style.display = 'none';
                 document.getElementById('kill_agent').style = 'transform: scale(1);';
@@ -148,3 +175,5 @@ function checkPassword()
         invalidPassword();
     };
 };
+
+// Main repository folder code ----------------------------- Seperate from login system code above
