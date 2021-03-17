@@ -2,7 +2,7 @@
 
 // User objects and properties storage
 const Emperor_of_Bluegaria = {username: "Almighty Emperor of Bluegaria", password: "glorytothebluegarianempire", admin: "yes"};
-const Kaiser_of_Redistan = {username: "Kaiser of Redistan", password: "0000", admin: "yes"};
+const Kaiser_of_Redistan = {username: "Kaiser of Redistan", password: "CheekiBreeki", admin: "yes"};
 const Czar_of_Yellowgard = {username: "Czar of Yellowgard", password: "respecttothebluegarianempire", admin: "yes"};
 const Administrator = {username: "Governement Official of Bluegaria", password: "highlysecurepassword", admin: "yes"}
 
@@ -11,6 +11,7 @@ const Guest = {username: "Citizen of Bluegaria", password: "Bluegaria", admin: "
 // Unofficial objects of the chronicle of Bluegaria
 const Macy = {username: "Bingus", password: "Amongus", admin: "yes"};
 const Stephen =  {username: "Stimmons", password: "die", admin: "yes"};
+const Mr_Moist = {username: "Mr. Moist", password: "Password", admin: "yes"};
 
 let Temp = {username: "Website in development object", password: "0", admin: "yes"};
 
@@ -67,6 +68,11 @@ function login()
 
         case 'Stephen':
             currentUser = Stephen;
+            checkPassword();
+            break;
+
+        case 'Mr. Moist':
+            currentUser = Mr_Moist;
             checkPassword();
             break;
 

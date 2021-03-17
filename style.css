@@ -158,6 +158,7 @@ html {
     transition-duration: 300ms;
     text-transform: uppercase;
     font-size: 24px;
+    text-align: center;
 }
 .login input {
     background: transparent;
