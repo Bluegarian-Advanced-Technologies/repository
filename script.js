@@ -66,7 +66,7 @@ function login()
             checkPassword();
             break;
 
-        case 'Stephen':
+        case 'Stephan':
             currentUser = Stephen;
             checkPassword();
             break;
