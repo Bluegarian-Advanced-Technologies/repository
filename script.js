@@ -12,6 +12,7 @@ const Guest = {username: "Citizen of Bluegaria", password: "Bluegaria", admin: "
 const Macy = {username: "Bingus", password: "Amongus", admin: "yes"};
 const Stephen =  {username: "Stimmons", password: "die", admin: "yes"};
 const Mr_Moist = {username: "Mr. Moist", password: "Password", admin: "yes"};
+const Corey = {username: "Corona Steve", password: "asd921112", admin: "yes"};
 
 let Temp = {username: "Website in development object", password: "0", admin: "yes"};
 
@@ -73,6 +74,11 @@ function login()
 
         case 'Mr. Moist':
             currentUser = Mr_Moist;
+            checkPassword();
+            break;
+
+        case 'Corona Steve':
+            currentUser = Corey;
             checkPassword();
             break;
 

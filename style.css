@@ -38,6 +38,8 @@ html {
     background: rgb(0, 73, 207);
 }
 
+/* --- */
+
 .secondfa {
     position: fixed;
     top: 0;
@@ -193,6 +195,64 @@ html {
 .login button:hover {
     background: #45abff;
     cursor: pointer;
+}
+
+/* Landing page responsive code */
+
+@media only screen and (max-width: 1280px) {
+    ::-webkit-scrollbar {
+        all: initial;
+        width: 0px;
+    }
+    ::-webkit-scrollbar-track {
+        all: initial;
+    }
+    ::-webkit-scrollbar-thumb {
+        all: initial;
+    }
+    .secondfa h1 {
+        font-size: 20px;
+    }
+    .landing h1 {
+        font-size: 48px;
+        text-align: center;
+        line-height: 135%;
+    }
+    .login-box {
+        min-width: 50vw;
+        max-width: 800px;
+    }
+    .login-box {
+        padding: 32px;
+    }
+    .login-box h2 {
+        font-size: 24px;
+    }
+    .login-box p {
+        font-size: 16px;
+    }
+    .login-box input {
+        font-size: 16px;
+    }
+    .login-box button {
+        font-size: 16px;
+    }
+
+
+    .footer {
+        background-position: center;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .landing h1 {
+        font-size: 32px;
+        text-align: center;
+        line-height: 135%;
+    }
+    .login-box {
+        min-width: 75vw;
+        max-width: 800px;
+    }
 }
 
 /* Main Content */
