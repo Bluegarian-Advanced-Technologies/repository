@@ -8,7 +8,7 @@ const Administrator = {username: "Governement Official of Bluegaria", password: 
 
 const Guest = {username: "Citizen of Bluegaria", password: "Bluegaria", admin: "no"};
 
-// Unofficial objects of the chronicle of Bluegaria
+// Seperate object from the chronicle of Bluegaria
 const Macy = {username: "Bingus", password: "Amongus", admin: "yes"};
 const Stephen =  {username: "Stimmons", password: "die", admin: "yes"};
 const Mr_Moist = {username: "Mr. Moist", password: "Password", admin: "yes"};
@@ -21,6 +21,30 @@ let Temp = {username: "Website in development object", password: "0", admin: "ye
 var currentUser;
 var username;
 var userPass;
+
+let widthCenter = window.innerWidth / 2;
+let heightCenter = window.innerHeight / 2;
+
+widthCenter -= 400;
+heightCenter -= 300;
+
+// Get user to read TOU before login
+
+document.querySelector('.login-box').addEventListener('click',readTOU)
+
+function readTOU() {
+    window.open("https://link", "The Terms of Use", `top=${heightCenter},left=${widthCenter},width=800,height=600`);
+    
+    setTimeout(() => {
+        document.querySelector('.login-box-tou').style.display = 'none';
+        document.getElementById('username').removeAttribute('disabled');
+        document.getElementById('password').removeAttribute('disabled');
+        document.getElementById('password').removeAttribute('disabled');
+        document.querySelector('.login-box button').removeAttribute('disabled');
+
+        document.querySelector('.login-box').removeEventListener('click', readTOU);
+    }, 5000);
+}
 
 // Login switch function
 function login() 
@@ -97,6 +121,8 @@ let invalidFieldTimeout = 0;
 function invalidUsername()
 {
     document.getElementById('invalidMsg').innerHTML = 'username invalid!';
+    document.getElementById('username').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
+    
     invalidFieldTimeout++;
 
     if (invalidFieldTimeout > 9)
@@ -106,11 +132,13 @@ function invalidUsername()
 
     setTimeout(() => {
         document.getElementById('invalidMsg').innerHTML = '';
+        document.getElementById('username').style = '';
     }, 3500);
 }
 function invalidPassword()
 {
     document.getElementById('invalidMsg').innerHTML = 'password invalid!';
+    document.getElementById('password').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
     invalidFieldTimeout++;
 
     if (invalidFieldTimeout > 9)
@@ -120,6 +148,7 @@ function invalidPassword()
 
     setTimeout(() => {
         document.getElementById('invalidMsg').innerHTML = '';
+        document.getElementById('password').style = '';
     }, 3500);
 };
 

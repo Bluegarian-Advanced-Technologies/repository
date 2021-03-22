@@ -146,6 +146,31 @@ html {
     padding: 64px;
     border-radius: 5px;
     transition-duration: 250ms;
+    position: relative;
+}
+.login-box-tou {
+    background: rgba(255, 255, 255, 0.685);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.login-box-tou__text {
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.493);
+    min-width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding: 16px;
 }
 .login h2 {
     font-size: 32px;
@@ -180,6 +205,10 @@ html {
 .login input:focus {
     border-bottom: 2px solid #1F92EE;
     color: white;
+}
+.login-has-text {
+    color: white;
+    background: rgba(255, 0, 0, 0.5);
 }
 .login button {
     padding: 16px 32px;
@@ -237,8 +266,6 @@ html {
     .login-box button {
         font-size: 16px;
     }
-
-
     .footer {
         background-position: center;
     }

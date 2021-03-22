@@ -19,6 +19,8 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="stylesheet" href="style.css">
+
+    <style></style>
 </head>
 <body>
     <div class="secondfa" style="display: none;">
@@ -31,13 +33,18 @@
         </section>
         <section class="section static login">
             <div class="login-box">
+                <div class="login-box-tou">
+                    <div class="login-box-tou__text">
+                        You must read the TOU before logging in. (Press here to read)
+                    </div>
+                </div>
                 <h2>Login to Continue</h2>
                 <p id="invalidMsg"></p>
 
-                <input id="username" type="text" name="username" spellcheck="false" autocomplete="off" placeholder="Username">
-                <input id="password" type="text" name="password" spellcheck="false" autocomplete="off" placeholder="Password">
+                <input id="username" type="text" name="username" spellcheck="false" autocomplete="off" disabled placeholder="Username">
+                <input id="password" type="text" name="password" spellcheck="false" autocomplete="off" disabled placeholder="Password">
 
-                <button onclick="login()">Login</button>
+                <button onclick="login()" disabled>Login</button>
             </div>
         </section>
         <section class="section static footer">
