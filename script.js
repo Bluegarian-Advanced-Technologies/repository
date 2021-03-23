@@ -14,7 +14,7 @@ window.addEventListener(
 
         // Callback function to execute when mutations are observed
         const callback = function(mutationsList, observer) {
-            document.location.href = '/.//Unauthorized.html';
+            document.location.href = '/./Unauthorized.html';
         };
 
         // Create an observer instance linked to the callback function
@@ -65,7 +65,7 @@ heightCenter -= 300;
 document.querySelector('.login-box').addEventListener('click',readTOU)
 
 function readTOU() {
-    window.open("/.//TOU.html", "The Terms of Use", `top=${heightCenter},left=${widthCenter},width=800,height=600`);
+    window.open("/./TOU.html", "The Terms of Use", `top=${heightCenter},left=${widthCenter},width=800,height=600`);
     
     setTimeout(() => {
         document.querySelector('.login-box-tou').style.display = 'none';
