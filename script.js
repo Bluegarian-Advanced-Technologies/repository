@@ -1,5 +1,32 @@
 'use strict';
 
+let globalObserverPointer;
+
+window.addEventListener(
+    'load',
+    function()
+    {
+        // Select the node that will be observed for mutations
+        const targetNode = document.querySelector('.repository');
+
+        // Options for the observer (which mutations to observe)
+        const config = { attributes: true, childList: true, subtree: true, characterData: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            document.write('');
+        };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
+
+        globalObserverPointer = observer;
+    }
+)
+
 // User objects and properties storage
 const Emperor_of_Bluegaria = {username: "Almighty Emperor of Bluegaria", password: "glorytothebluegarianempire", admin: "yes"};
 const Kaiser_of_Redistan = {username: "Kaiser of Redistan", password: "CheekiBreeki", admin: "yes"};
@@ -33,7 +60,7 @@ heightCenter -= 300;
 document.querySelector('.login-box').addEventListener('click',readTOU)
 
 function readTOU() {
-    window.open("https://link", "The Terms of Use", `top=${heightCenter},left=${widthCenter},width=800,height=600`);
+    window.open("/.//TOU.html", "The Terms of Use", `top=${heightCenter},left=${widthCenter},width=800,height=600`);
     
     setTimeout(() => {
         document.querySelector('.login-box-tou').style.display = 'none';
@@ -158,6 +185,8 @@ function checkPassword()
     if (userPass === currentUser.password)
     {
         alert('Correct password, now initiating second factor authorization confirmation');
+        globalObserverPointer.disconnect();
+
         document.querySelector('.secondfa').style.display = 'flex';
 
         document.getElementById('secondfaSounds').play();
@@ -217,4 +246,4 @@ function checkPassword()
     };
 };
 
-// Main repository folder code ----------------------------- Seperate from login system code above
+// Main repository folder code ----------------------------- Seperate from login system code above 
