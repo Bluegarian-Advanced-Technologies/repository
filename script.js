@@ -24,6 +24,11 @@ window.addEventListener(
         observer.observe(targetNode, config);
 
         globalObserverPointer = observer;
+
+        document.querySelector('.loading').style = 'opacity:0';
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none';
+        }, 500);
     }
 )
 

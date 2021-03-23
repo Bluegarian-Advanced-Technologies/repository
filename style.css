@@ -40,6 +40,27 @@ html {
 
 /* --- */
 
+.loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(0, 56, 160);
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+}
+.loading h1{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .secondfa {
     position: fixed;
     top: 0;
