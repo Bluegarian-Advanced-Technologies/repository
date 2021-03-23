@@ -14,7 +14,7 @@ window.addEventListener(
 
         // Callback function to execute when mutations are observed
         const callback = function(mutationsList, observer) {
-            document.write('');
+            document.location.href = '/.//Unauthorized.html';
         };
 
         // Create an observer instance linked to the callback function
