@@ -227,9 +227,18 @@ html {
     border-bottom: 2px solid #1F92EE;
     color: white;
 }
-.login-has-text {
-    color: white;
-    background: rgba(255, 0, 0, 0.5);
+.show-password-container {
+    display: flex;
+    align-items: center;
+}
+.show-password-container label {
+    font-size: 20px;
+    margin-right: 8px;
+}
+#show-password {
+    width: 25px;
+    height: 25px;
+    margin: 0;
 }
 .login button {
     padding: 16px 32px;

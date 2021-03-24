@@ -78,6 +78,52 @@ function readTOU() {
     }, 5000);
 }
 
+// Show password toggle
+
+document.getElementById('show-password').addEventListener(
+    'click',
+    function()
+    {
+        if (document.getElementById('show-password').checked == true)
+        {
+            document.getElementById('password').type = 'text';
+        }else {
+            document.getElementById('password').type = 'password';
+        }
+    }
+)
+
+// Check if inputs have text
+
+document.getElementById('username').addEventListener(
+    'keydown',
+    function()
+    {
+        setTimeout(() => {
+            if (document.getElementById('username').value != '')
+            {
+                document.getElementById('username').style = 'border-bottom: 2px solid #1F92EE; color: white;';
+            }else {
+                document.getElementById('username').style = '';
+            }
+        }, 100);
+    }
+);
+document.getElementById('password').addEventListener(
+    'keydown',
+    function()
+    {
+        setTimeout(() => {
+            if (document.getElementById('password').value != '')
+            {
+                document.getElementById('password').style = 'border-bottom: 2px solid #1F92EE; color: white;';
+            }else {
+                document.getElementById('password').style = '';
+            }
+        }, 100);
+    }
+);
+
 // Login switch function
 function login() 
 {
@@ -155,6 +201,8 @@ function invalidUsername()
     document.getElementById('invalidMsg').innerHTML = 'username invalid!';
     document.getElementById('username').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
     
+    document.getElementById('incorrectSound').play();
+
     invalidFieldTimeout++;
 
     if (invalidFieldTimeout > 9)
@@ -171,6 +219,9 @@ function invalidPassword()
 {
     document.getElementById('invalidMsg').innerHTML = 'password invalid!';
     document.getElementById('password').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
+    
+    document.getElementById('incorrectSound').play();
+    
     invalidFieldTimeout++;
 
     if (invalidFieldTimeout > 9)

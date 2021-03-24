@@ -46,7 +46,10 @@
                 <p id="invalidMsg"></p>
 
                 <input id="username" type="text" name="username" spellcheck="false" autocomplete="off" disabled placeholder="Username">
-                <input id="password" type="text" name="password" spellcheck="false" autocomplete="off" disabled placeholder="Password">
+                <input id="password" type="password" name="password" spellcheck="false" autocomplete="off" disabled placeholder="Password">
+                <div class="show-password-container">
+                    <label for="show-password">Show: </label><input id="show-password" type="checkbox" name="show-password">
+                </div>
 
                 <button onclick="login()" disabled>Login</button>
             </div>
@@ -64,6 +67,10 @@
 
     <audio id="secondfaSounds">
         <source src="Assets/Audio/Memetic Kill Agent.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="incorrectSound">
+        <source src="Assets/Audio/Incorrect.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
