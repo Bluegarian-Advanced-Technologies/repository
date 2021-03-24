@@ -60,6 +60,11 @@ html {
     margin-top: 12px;
     margin-bottom: 12px;
 }
+noscript {
+    color: red;
+    max-width: 90%;
+    font-size: 15px;
+}
 
 .secondfa {
     position: fixed;
