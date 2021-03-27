@@ -45,7 +45,7 @@
                         You must read the TOU before logging in. (Press here to read)
                     </div>
                 </div>
-                <h2>Login to Continue</h2>
+                <h2>Log in to Continue</h2>
                 <p id="invalidMsg"></p>
 
                 <input id="username" type="text" name="username" spellcheck="false" autocomplete="off" disabled placeholder="Username">
@@ -54,12 +54,12 @@
                     <label for="show-password">Show: </label><input id="show-password" type="checkbox" name="show-password">
                 </div>
 
-                <button onclick="login()" disabled>Login</button>
+                <button onclick="login()" disabled>Log in</button>
             </div>
         </section>
         <section class="section static footer"></section>
     </div>
-    <main class="repository" style="display: none;">
+    <main class="repository" style="display: block;">
         <h1>Welcome, <span id="welcomer"></span></h1>
 
         <div class="music-player-container">
@@ -77,14 +77,13 @@
                     </datalist>
 
                     <button id="submit-music" >Play Music</button>
-
+                    <div class="music-controller-container">
+                        <p id="music-msg"></p>
+                        <audio id="music-controller" controls preload="auto" autoplay loop>
+                            <source src="" type="audio/mpeg" loadedSong="" id="music-src">
+                        </audio>
+                    </div>
                     </fieldset>
-                <div class="music-controller-container">
-                    <p id="music-msg"></p>
-                    <audio id="music-controller" controls preload="auto" autoplay loop>
-                        <source src="" type="audio/mpeg" loadedSong="" id="music-src">
-                    </audio>
-                </div>
             </div>
         </div>
         <section class="secret" style="display: none;">
