@@ -415,6 +415,9 @@ main h1 {
     transition-duration: 250ms;
     font-size: 24px;
 }
+.music-selector input::placeholder {
+    color: #88A4B4;
+}
 .music-controller-container {
     display: flex;
     justify-content: center;
