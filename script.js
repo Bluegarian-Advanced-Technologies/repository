@@ -318,18 +318,19 @@ document.getElementById('submit-music').addEventListener(
             document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
             document.getElementById('music-msg').innerHTML = 'No song selected!';
             setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;'
+                document.getElementById('music-msg').style = 'opacity: 0;';
             }, 1200);
         }else if (music === currentSong)
         {
             document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
             document.getElementById('music-msg').innerHTML = 'Song already playing!';
-            document.getElementById('music-selected').value = ''
+            document.getElementById('music-selected').value = '';
             setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;'
+                document.getElementById('music-msg').style = 'opacity: 0;';
             }, 1500);
         }else {
             currentSong = music;
+            console.log(`Now playing: ${currentSong}`);
 
             document.getElementById('music-controller').src = `Assets/Audio/Music/${music}.mp3`;
             music = document.getElementById('music-selected').value = '';
@@ -337,10 +338,8 @@ document.getElementById('submit-music').addEventListener(
             document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
             document.getElementById('music-msg').innerHTML = 'Loaded and playing!';
 
-            console.log(`Now playing: ${music}`)
-
             setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;'
+                document.getElementById('music-msg').style = 'opacity: 0;';
             }, 1800);
         };
     }
