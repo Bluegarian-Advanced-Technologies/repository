@@ -65,7 +65,6 @@ noscript {
     max-width: 90%;
     font-size: 18px;
 }
-
 .secondfa {
     position: fixed;
     top: 0;
@@ -175,6 +174,7 @@ noscript {
     position: relative;
 }
 .login-box-tou {
+    cursor: pointer;
     background: rgba(255, 255, 255, 0.685);
     position: absolute;
     top: 0;
@@ -189,7 +189,7 @@ noscript {
 }
 .login-box-tou__text {
     font-size: 24px;
-    background: rgba(0, 0, 0, 0.493);
+    background: rgba(0, 27, 59, 0.432);
     min-width: 75%;
     position: absolute;
     top: 50%;
@@ -245,6 +245,10 @@ noscript {
     height: 25px;
     margin: 0;
 }
+#show-password:focus {
+    outline: 2px solid white;
+    outline-offset: 1px;
+}
 .login button {
     padding: 16px 32px;
     font-size: 32px;
@@ -259,6 +263,9 @@ noscript {
 .login button:hover {
     background: #45abff;
     cursor: pointer;
+}
+.login button:focus {
+    background: #45abff;
 }
 
 /* Landing page responsive code */
@@ -298,6 +305,13 @@ noscript {
     .login-box input {
         font-size: 16px;
     }
+    .show-password-container label {
+        font-size: 14px;
+    }
+    #show-password {
+        width: 18px;
+        height: 18px;
+    }
     .login-box button {
         font-size: 16px;
     }
@@ -317,7 +331,7 @@ noscript {
     }
 }
 
-/* Main Content */
+/* -------------- Main Content -------------- */
 
 main {
     height: 2000px;
@@ -329,6 +343,89 @@ main h1 {
     text-align: center;
     color: white;
 }
+
+/* ------- Music player ------- */
+
+.music-player-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px;
+}
+.music-player {
+    width: 55vw;
+    border: 3px solid rgb(0, 73, 207);
+    background: rgb(40, 115, 255);
+    height: 30vh;
+    padding: 16px;
+    min-width: 800px;
+    position: relative;
+}
+.music-player #music-msg {
+    color: rgb(0, 255, 0);
+    position: absolute;
+    text-align: center;
+    top: 0;
+    font-size: 24px;
+    font-weight: bold;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+    user-select: none;
+}
+.music-label {
+    font-size: 36px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.music-selector {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 32px;
+}
+.music-selector button {
+    padding: 16px 32px;
+    font-size: 24px;
+    color: white;
+    background: #1F92EE;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    transition-duration: 200ms;
+}
+.music-selector button:hover {
+    background: #45abff;
+    cursor: pointer;
+}
+.music-selector button:focus {
+    background: #45abff;
+}
+.music-selector input {
+    width: 50%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #A5C1D5;
+    outline: none;
+    color: white;
+    text-align: left;
+    font-size: 24px;
+    transition-duration: 250ms;
+    font-size: 24px;
+}
+.music-controller-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.music-player audio {
+    width: 90%;
+    margin-bottom: 24px;
+}
+  
+/*  */
 
 .secret {
     height: 1000px;

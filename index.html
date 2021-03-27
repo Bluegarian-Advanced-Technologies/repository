@@ -57,12 +57,36 @@
                 <button onclick="login()" disabled>Login</button>
             </div>
         </section>
-        <section class="section static footer">
-            
-        </section>
+        <section class="section static footer"></section>
     </div>
     <main class="repository" style="display: none;">
         <h1>Welcome, <span id="welcomer"></span></h1>
+
+        <div class="music-player-container">
+            <div class="music-player">
+                <div class="music-label">Music Player</div> 
+                <fieldset class="music-selector">
+                    <input type="text" list="music-list" id="music-selected">
+                    <datalist id="music-list">
+                        <option value="Sweden"></option>
+                        <option value="Crab Rave"></option>
+                        <option value="Megalovania"></option>
+                        <option value="Fallen Kingdom"></option>
+                        <option value="Last Summer"></option>
+                        <option value="Turtle Beach"></option>
+                    </datalist>
+
+                    <button id="submit-music" >Play Music</button>
+
+                    </fieldset>
+                <div class="music-controller-container">
+                    <p id="music-msg"></p>
+                    <audio id="music-controller" controls preload="auto" autoplay loop>
+                        <source src="" type="audio/mpeg" loadedSong="" id="music-src">
+                    </audio>
+                </div>
+            </div>
+        </div>
         <section class="secret" style="display: none;">
             SECRET ADMIN ONLY INFO HERE
         </section>
