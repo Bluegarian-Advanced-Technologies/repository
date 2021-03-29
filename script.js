@@ -307,40 +307,79 @@ function checkPassword()
 
 let currentSong;
 
+const songs = [
+    'Adventure',
+    'Aria Math',
+    'Crab Rave',
+    'Fallen Kingdom',
+    'Firefly',
+    'Megalovania',
+    'Pigstep',
+    'Sweden',
+    'Turtle Beach',
+    'Wait'
+];
+
+function hasSong()
+{
+    var hasTheSong = songs.includes(document.getElementById('music-selected').value);
+    return hasTheSong;
+}
+
 document.getElementById('submit-music').addEventListener(
     'click',
     function(music)
     {
         music = document.getElementById('music-selected').value;
 
-        if (music == '')
-        {
-            document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-            document.getElementById('music-msg').innerHTML = 'No song selected!';
-            setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;';
-            }, 1200);
-        }else if (music === currentSong)
-        {
-            document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-            document.getElementById('music-msg').innerHTML = 'Song already playing!';
-            document.getElementById('music-selected').value = '';
-            setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;';
-            }, 1500);
-        }else {
-            currentSong = music;
-            console.log(`Now playing: ${currentSong}`);
+            if (music == '')
+            {
+                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
+                document.getElementById('music-msg').innerHTML = 'No song selected!';
+                document.getElementById('music-selected').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
+                setTimeout(() => {
+                    document.getElementById('music-msg').style = 'opacity: 0;';
+                    document.getElementById('music-selected').style = '';
+                }, 1200);
+            }
+            else if (hasSong() == false)
+            {
+                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
+                document.getElementById('music-msg').innerHTML = 'Song not found!';
+                document.getElementById('music-selected').value = '';
+                setTimeout(() => {
+                    document.getElementById('music-msg').style = 'opacity: 0;';
+                }, 1500);
+            }else if (music === currentSong)
+            {
+                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
+                document.getElementById('music-msg').classList.add('music-msg--rgb')
+                document.getElementById('music-msg').innerHTML = 'Song already playing!';
+                document.getElementById('music-selected').value = '';
+                setTimeout(() => {
+                    document.getElementById('music-msg').style = 'opacity: 0;';
+                }, 1500);
 
-            document.getElementById('music-controller').src = `Assets/Audio/Music/${music}.mp3`;
-            music = document.getElementById('music-selected').value = '';
-
-            document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-            document.getElementById('music-msg').innerHTML = 'Loaded and playing!';
+                setTimeout(() => {
+                    document.getElementById('music-msg').classList.remove('music-msg--rgb');
+                }, 2000);
+            }else {
+                currentSong = music;
+    
+                document.getElementById('music-controller').src = `Assets/Audio/Music/${currentSong}.mp3`;
+                music = document.getElementById('music-selected').value = '';
+    
+                document.getElementById('music-msg').classList.add('music-msg--rgb')
+                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
+                document.getElementById('music-msg').innerHTML = `Now playing: ${currentSong}!`;
+    
+                setTimeout(() => {
+                    document.getElementById('music-msg').style = 'opacity: 0;';
+            }, 3000);
 
             setTimeout(() => {
-                document.getElementById('music-msg').style = 'opacity: 0;';
-            }, 1800);
+                document.getElementById('music-msg').classList.remove('music-msg--rgb');
+            }, 3500);
         };
     }
 );

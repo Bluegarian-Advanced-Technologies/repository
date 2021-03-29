@@ -59,7 +59,7 @@
         </section>
         <section class="section static footer"></section>
     </div>
-    <main class="repository" style="display: none;">
+    <main class="repository" style="display: block;">
         <h1>Welcome, <span id="welcomer"></span></h1>
 
         <div class="music-player-container">
@@ -68,22 +68,27 @@
                 <fieldset class="music-selector">
                     <input type="text" list="music-list" id="music-selected" placeholder="Select song">
                     <datalist id="music-list">
-                        <option value="Sweden"></option>
+                        <option value="Adventure"></option>
+                        <option value="Aria Math"></option>
                         <option value="Crab Rave"></option>
-                        <option value="Megalovania"></option>
                         <option value="Fallen Kingdom"></option>
+                        <option value="Firefly"></option>
                         <option value="Last Summer"></option>
+                        <option value="Megalovania"></option>
+                        <option value="Pigstep"></option>
+                        <option value="Sweden"></option>
                         <option value="Turtle Beach"></option>
+                        <option value="Wait"></option>
                     </datalist>
 
                     <button id="submit-music" >Play Music</button>
                     <div class="music-controller-container">
                         <p id="music-msg"></p>
                         <audio id="music-controller" controls preload="auto" autoplay loop>
-                            <source src="" type="audio/mpeg" loadedSong="" id="music-src">
+                            <source src="" type="audio/mpeg" id="music-src">
                         </audio>
                     </div>
-                    </fieldset>
+                </fieldset>
             </div>
         </div>
         <section class="secret" style="display: none;">
