@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="document">
 <head>
     <title>DISCONNECTED</title>
 
@@ -41,5 +41,26 @@
             Prepare to be apprehended, criminal!
         </p>
     </div>
+    <script>
+        window.addEventListener('load', function()
+        {
+        // Select the node that will be observed for mutations
+        const targetNode = document.getElementById('document');
+
+        // Options for the observer (which mutations to observe)
+        const config = { attributes: true, childList: true, subtree: true, characterData: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            location.reload();
+        };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
+        })
+    </script>
 </body>
 </html>

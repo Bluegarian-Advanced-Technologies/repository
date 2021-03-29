@@ -23,7 +23,6 @@ window.addEventListener(
         // Start observing the target node for configured mutations
         observer.observe(targetNode, config);
 
-        observer.disconnect();
         globalObserverPointer = observer;
 
         document.querySelector('.loading').style = 'opacity:0';
