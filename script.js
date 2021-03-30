@@ -312,6 +312,7 @@ const songs = [
     'Crab Rave',
     'Fallen Kingdom',
     'Firefly',
+    'Last Summer',
     'Megalovania',
     'Pigstep',
     'Sweden',
