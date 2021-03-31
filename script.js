@@ -410,7 +410,7 @@ document.getElementById('submit-music').addEventListener(
                     document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
 
                     document.getElementById('music-controller').src = `Assets/Audio/Music/${currentSong}.mp3`;
-                    music = document.getElementById('music-selected').value = '';
+                    document.getElementById('music-selected').value = '';
         
                     document.getElementById('music-msg').classList.add('music-msg--rgb')
                     document.getElementById('music-msg').innerHTML = `Now playing: ${currentSong}!`;
