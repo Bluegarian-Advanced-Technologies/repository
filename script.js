@@ -14,6 +14,7 @@ window.addEventListener(
 
         // Callback function to execute when mutations are observed
         const callback = function(mutationsList, observer) {
+            document.write('');
             document.location.href = 'https://bluegarian-advanced-technologies.github.io/repository/Unauthorized.html';
         };
 
@@ -123,6 +124,32 @@ document.getElementById('password').addEventListener(
         }, 100);
     }
 );
+
+document.getElementById('username').addEventListener(
+    'keydown', function (e) {
+    e = e || window.event;
+
+    if (e.key == 'Enter')
+    {
+        document.getElementById('username').blur();
+        setTimeout(() => {
+            login();
+        }, 200);
+    }
+});
+
+document.getElementById('password').addEventListener(
+    'keydown', function (e) {
+    e = e || window.event;
+
+    if (e.key == 'Enter')
+    {
+        document.getElementById('username').blur();
+        setTimeout(() => {
+            login();
+        }, 200);
+    };
+});
 
 // Login switch function
 function login() 
@@ -332,49 +359,64 @@ document.getElementById('submit-music').addEventListener(
     {
         music = document.getElementById('music-selected').value;
 
+        let responsiveTextMsgCheckThingVariable;
+
+        if (window.innerWidth < 850)
+        {
+            responsiveTextMsgCheckThingVariable = '-16px';
+        }else {
+            responsiveTextMsgCheckThingVariable = '-25px';
+        }
+
             if (music == '')
             {
-                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-                document.getElementById('music-msg').innerHTML = 'No song selected!';
-                document.getElementById('music-selected').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
-                setTimeout(() => {
-                    document.getElementById('music-msg').style = 'opacity: 0;';
-                    document.getElementById('music-selected').style = '';
-                }, 1200);
+                    document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
+                    
+                    document.getElementById('music-msg').innerHTML = 'No song selected!';
+                    document.getElementById('music-selected').style = 'border-bottom: 2px solid red;background: rgba(255, 0, 0, 0.3);';
+                    setTimeout(() => {
+                        document.getElementById('music-msg').style = 'opacity: 0;';
+                        document.getElementById('music-selected').style = '';
+                    }, 1200);
             }
             else if (hasSong() == false)
             {
-                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-                document.getElementById('music-msg').innerHTML = 'Song not found!';
-                document.getElementById('music-selected').value = '';
-                setTimeout(() => {
-                    document.getElementById('music-msg').style = 'opacity: 0;';
-                }, 1500);
+                    document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
+
+                    document.getElementById('music-msg').innerHTML = 'Song not found!';
+                    document.getElementById('music-selected').value = '';
+                    setTimeout(() => {
+                        document.getElementById('music-msg').style = 'opacity: 0;';
+                    }, 1500);
+
             }else if (music === currentSong)
             {
-                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-                document.getElementById('music-msg').classList.add('music-msg--rgb')
-                document.getElementById('music-msg').innerHTML = 'Song already playing!';
-                document.getElementById('music-selected').value = '';
-                setTimeout(() => {
-                    document.getElementById('music-msg').style = 'opacity: 0;';
-                }, 1500);
-
+                    document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
+                    document.getElementById('music-msg').classList.add('music-msg--rgb')
+                    document.getElementById('music-msg').innerHTML = 'Song already playing!';
+                    document.getElementById('music-selected').value = '';
+                    setTimeout(() => {
+                        document.getElementById('music-msg').style = 'opacity: 0;';
+                    }, 1500);
                 setTimeout(() => {
                     document.getElementById('music-msg').classList.remove('music-msg--rgb');
                 }, 2000);
             }else {
                 currentSong = music;
-    
-                document.getElementById('music-controller').src = `Assets/Audio/Music/${currentSong}.mp3`;
-                music = document.getElementById('music-selected').value = '';
-    
-                document.getElementById('music-msg').classList.add('music-msg--rgb')
-                document.getElementById('music-msg').style = 'transform: translate(0px,-25px);';
-                document.getElementById('music-msg').innerHTML = `Now playing: ${currentSong}!`;
-    
-                setTimeout(() => {
-                    document.getElementById('music-msg').style = 'opacity: 0;';
+
+                    document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
+
+                    document.getElementById('music-controller').src = `Assets/Audio/Music/${currentSong}.mp3`;
+                    music = document.getElementById('music-selected').value = '';
+        
+                    document.getElementById('music-msg').classList.add('music-msg--rgb')
+                    document.getElementById('music-msg').innerHTML = `Now playing: ${currentSong}!`;
+
+                    document.getElementById('current-playing-song').innerHTML = `♫ ${currentSong}`;
+                    document.getElementById('current-playing-song').style = `animation: rgb 1.5s infinite;`;
+
+            setTimeout(() => {
+                document.getElementById('music-msg').style = 'opacity: 0;';
             }, 3000);
 
             setTimeout(() => {

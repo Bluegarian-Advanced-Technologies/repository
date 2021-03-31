@@ -221,7 +221,7 @@ noscript {
     color: #88A4B4;
     text-align: center;
     font-size: 24px;
-    transition-duration: 250ms;
+    transition-duration: 200ms;
     margin: 16px;
     width: 100%;
 }
@@ -412,6 +412,12 @@ main h1 {
 .music-selector button:focus {
     background: #45abff;
 }
+#current-playing-song {
+    font-size: 28px;
+    text-align: center;
+    position: absolute;
+    transform: translate(0px,56px);
+}
 .music-selector input {
     width: 50%;
     background: transparent;
@@ -465,6 +471,12 @@ main h1 {
     .music-player {
         width: 90vw;
         min-width: 0;
+    }
+    .music-player #music-msg {
+        font-size: 16px;
+    }
+    #current-playing-song {
+        font-size: 16px;
     }
 }
 

@@ -10,6 +10,29 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto Condensed');
 
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(193, 218, 255);
+        }
+
+        ::selection {
+            color: rgb(255, 187, 0);
+            background: rgba(255, 255, 255, 0.363);
+        }
+        ::-moz-selection {
+            color: rgb(255, 187, 0);
+            background: rgba(255, 255, 255, 0.363);
+        }
+
         body {
             margin: 0;
             background: rgb(0, 82, 235);
@@ -85,6 +108,7 @@
 
         // Callback function to execute when mutations are observed
         const callback = function(mutationsList, observer) {
+            document.write('');
             document.location.href = 'https://bluegarian-advanced-technologies.github.io/repository/Unauthorized.html';
         };
 

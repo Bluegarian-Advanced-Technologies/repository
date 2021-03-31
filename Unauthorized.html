@@ -10,6 +10,29 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: white;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(193, 218, 255);
+        }
+
+        ::selection {
+            color: rgb(255, 187, 0);
+            background: rgba(255, 255, 255, 0.363);
+        }
+        ::-moz-selection {
+            color: rgb(255, 187, 0);
+            background: rgba(255, 255, 255, 0.363);
+        }
+        
         html {
             font-family: 'Roboto', Arial, Helvetica, sans-serif;
         }
