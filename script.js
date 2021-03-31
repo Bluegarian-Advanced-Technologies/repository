@@ -268,6 +268,9 @@ function checkPassword()
     if (userPass === currentUser.password)
     {
         alert('Correct password, now initiating second factor authorization confirmation');
+
+        document.querySelector('.login-box button').blur();
+
         globalObserverPointer.disconnect();
 
         document.querySelector('.secondfa').style.display = 'flex';
