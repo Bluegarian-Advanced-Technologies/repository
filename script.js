@@ -26,6 +26,8 @@ window.addEventListener(
 
         globalObserverPointer = observer;
 
+        observer.disconnect();
+
         document.querySelector('.loading').style = 'opacity:0';
         setTimeout(() => {
             document.querySelector('.loading').style.display = 'none';
@@ -144,7 +146,7 @@ document.getElementById('password').addEventListener(
 
     if (e.key == 'Enter')
     {
-        document.getElementById('username').blur();
+        document.getElementById('password').blur();
         setTimeout(() => {
             login();
         }, 200);
@@ -278,15 +280,15 @@ function checkPassword()
         document.getElementById('secondfaSounds').play();
 
         setTimeout(() => {
-            document.getElementById('kill_agent').style = 'transform: scale(1.75);'
+            document.getElementById('kill-agent-img').style = 'transform: scale(1.75);'
         }, 200);
 
         setTimeout(() => {
             document.getElementById('kill_agent').addEventListener('click', function()
             {
                 document.querySelector('.secondfa').style.display = 'none';
-                document.getElementById('kill_agent').style = 'transform: scale(1);';
-    
+                document.getElementById('kill-agent-img').style = 'transform: scale(1);';
+
                 document.getElementById('secondfaSounds').pause();
     
                 document.querySelector('main').style.display = 'block';
@@ -395,7 +397,7 @@ document.getElementById('submit-music').addEventListener(
             }else if (music === currentSong)
             {
                     document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
-                    document.getElementById('music-msg').classList.add('music-msg--rgb')
+                    document.getElementById('music-msg').classList.add('music-msg--rgb');
                     document.getElementById('music-msg').innerHTML = 'Song already playing!';
                     document.getElementById('music-selected').value = '';
                     setTimeout(() => {
@@ -407,16 +409,21 @@ document.getElementById('submit-music').addEventListener(
             }else {
                 currentSong = music;
 
-                    document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
+                document.getElementById('music-msg').style = `transform: translate(0px,${responsiveTextMsgCheckThingVariable});`;
 
-                    document.getElementById('music-controller').src = `Assets/Audio/Music/${currentSong}.mp3`;
-                    document.getElementById('music-selected').value = '';
-        
-                    document.getElementById('music-msg').classList.add('music-msg--rgb')
-                    document.getElementById('music-msg').innerHTML = `Now playing: ${currentSong}!`;
+                document.getElementById('music-controller').src = `Assets/Audio/Music/${music}.mp3`;
+                document.getElementById('music-selected').value = '';
 
-                    document.getElementById('current-playing-song').innerHTML = `♫ ${currentSong}`;
-                    document.getElementById('current-playing-song').style = `animation: rgb 1.5s infinite;`;
+                document.getElementById('music-msg').classList.add('music-msg--rgb')
+                document.getElementById('music-msg').innerHTML = `Now playing: ${music}!`;
+
+                document.getElementById('current-playing-song').innerHTML = `♫ ${music}`;
+
+                var elmEE = document.getElementById('current-playing-song');
+                var newoneEE = elmEE.cloneNode(true);
+                elmEE.parentNode.replaceChild(newoneEE, elmEE);
+
+                document.getElementById('current-playing-song').style = `animation: rgb 1.5s infinite;`;
 
             setTimeout(() => {
                 document.getElementById('music-msg').style = 'opacity: 0;';
@@ -428,3 +435,9 @@ document.getElementById('submit-music').addEventListener(
         };
     }
 );
+
+document.querySelector('.root-label').addEventListener('click', showRepSection)
+
+function showRepSection() {
+
+}

@@ -31,8 +31,10 @@
         </noscript>
     </div>
     <div class="secondfa" style="display: none;">
-        <h1 id="secondfaInfo"></h1>
-        <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="Kill Agent" id="kill_agent" style>
+        <div class="secondfa-image-listener" id="kill_agent">
+            <h1 id="secondfaInfo"></h1>
+            <img src="Assets/Images/memetic_kill_agent_img.jpg" alt="Kill Agent" style id="kill-agent-img">
+        </div>
     </div>
     <div class="parallax-wrapper">
         <section class="section parallax landing">
@@ -59,7 +61,7 @@
         </section>
         <section class="section static footer"></section>
     </div>
-    <main class="repository" style="display: none;">
+    <main class="repository" style="display: block;">
         <h1>Welcome, <span id="welcomer"></span></h1>
 
         <div class="music-player-container">
@@ -86,6 +88,7 @@
                         <p id="music-msg"></p>
                         <audio id="music-controller" controls preload="auto" autoplay loop>
                             <source src="" type="audio/mpeg" id="music-src">
+                            Your browser does not support the audio element. (bruh how old is your browser)
                         </audio>
                         <br/>
                         <p id="current-playing-song"></p>
@@ -93,9 +96,20 @@
                 </fieldset>
             </div>
         </div>
-        <h2 style="color: white;">
-            Repository things will go here when it is complete
-        </h2>
+
+
+        <div class="public-rep">
+            <span class="public-rep-section-label root-label">Repository</span>
+            
+            <span class="public-rep-section-label">Story</span>
+            <div class="public-rep-section nest story">
+                <div class="public-rep__object">
+                    
+                </div>
+            </div>
+
+        </div>
+
         <section class="secret" style="display: none;">
             SECRET ADMIN ONLY INFO HERE
         </section>
@@ -103,11 +117,9 @@
 
     <audio id="secondfaSounds" preload="auto">
         <source src="Assets/Audio/Memetic Kill Agent.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
     <audio id="incorrectSound" preload="auto">
         <source src="Assets/Audio/Incorrect.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
 
     <script src="script.js"></script>

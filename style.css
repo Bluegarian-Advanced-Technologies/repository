@@ -79,17 +79,25 @@ noscript {
 }
 .secondfa h1 {
     font-size: 32px;
-    text-align: center;
-    z-index: 9999;
+    z-index: 9;
     color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.secondfa-image-listener {
+    width: 50vw;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    cursor: pointer;
 }
 .secondfa img {
-    position: fixed;
-    width: 50vw;
-    height: auto;
     transition-duration: 4s;
     transition-timing-function: linear;
-    cursor: pointer;
 }
 
 /* Parallax landing page and login */
@@ -232,6 +240,27 @@ noscript {
     border-bottom: 2px solid #1F92EE;
     color: white;
 }
+
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover, 
+.login input:-webkit-autofill:active
+{
+    background: rgb(27, 107, 255);
+    border: none;
+    border-bottom: 2px solid #A5C1D5;
+    outline: none;
+    color: #88A4B4;
+    text-align: center;
+    font-size: 24px;
+    transition-duration: 200ms;
+    margin: 16px;
+    width: 100%;
+}
+.login input:-webkit-autofill:focus {
+    border-bottom: 2px solid #1F92EE;
+    color: white;
+}
+
 .show-password-container {
     display: flex;
     align-items: center;
@@ -482,6 +511,38 @@ main h1 {
 
 /*  */
 
+.public-rep {
+    width: 100%;
+    color: white;
+}
+.public-rep-section-label {
+    font-size: 24px;
+}
+.public-rep-section-label::before {
+    content: '\25B6';
+    display: inline-block;
+    margin-right: 8px;
+}
+.public-rep-section-label:hover {
+    cursor: pointer;
+}
+.nest, .public-rep-section-label {
+    margin-left: 32px;
+}
+.public-rep-section {
+    display: none;
+}
+.root-label {
+    margin-left: 0px;
+    color: white;
+}
+.--active::before {
+    transform: rotate(90deg);
+}
+.--showing {
+    display: block;
+}
+/*  */
 .secret {
     height: 1000px;
     background: rgb(21, 78, 185);
